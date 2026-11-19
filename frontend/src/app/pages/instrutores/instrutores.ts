@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [],
   selector: 'app-instrutores',
-  styleUrl: './instrutores.scss',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './instrutores.html',
+  styleUrl: './instrutores.scss'
 })
-export class Instrutores {}
+export class InstrutoresComponent { // <-- O nome tem de ser este
+}

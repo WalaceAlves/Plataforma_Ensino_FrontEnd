@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // <-- Adicione esta linha
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
 export class HomeComponent {
-  // Lógica da página Home (podes deixar vazio por enquanto)
+  // ...
 }
