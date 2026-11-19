@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========================================
+   VARIÁVEIS GLOBAIS (Cores e Fontes)
+   ========================================= */
+:root {
+  --primary-color: #e94560; /* Rosa/Avermelhado do seu tema */
+  --bg-dark: #1a1a2e;
+  --bg-light: #f8f9fa;
+  --text-dark: #333;
+  --text-light: #fff;
+  --text-muted: #666;
+  --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* =========================================
+   RESET E ESTILOS BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* =========================================
+   BOTÕES GLOBAIS
+   ========================================= */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: darken(#e94560, 10%);
+  }
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: 2px solid var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+  }
+}
+
+/* =========================================
+   TÍTULOS
+   ========================================= */
+h1, h2, h3 {
+  color: var(--bg-dark);
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+/* =========================================
+   ACESSIBILIDADE E CONTRASTE
+   ========================================= */
+
+/* 1. Foco Visível (Navegação por Teclado) */
+*:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* 2. Texto com tamanho mínimo legível */
+body {
+  font-size: 16px; /* Tamanho base ideal */
+  line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* 3. Links com sublinhado (para não depender só da cor) */
+a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--bg-dark);
+  
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+/* 4. Botões: área de clique maior (mínimo 44x44px) */
+button, .btn-primary, .btn-secondary {
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+}
+
+/* 5. Reduzir animações para quem prefere (Motion Sensitivity) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 6. Imagens com texto alternativo visível */
+img {
+  max-width: 100%;
+  height: auto;
+}
